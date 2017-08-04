@@ -14,7 +14,7 @@ defmodule SecretGrinch.Application do
       # Start the endpoint when the application starts
       supervisor(SecretGrinchWeb.Endpoint, []),
       # Start your own worker by calling: SecretGrinch.Worker.start_link(arg1, arg2, arg3)
-      # worker(SecretGrinch.Worker, [arg1, arg2, arg3]),
+      worker(SecretGrinch.Assigner, []),
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
