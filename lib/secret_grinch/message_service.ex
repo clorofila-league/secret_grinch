@@ -9,11 +9,16 @@ defmodule SecretGrinch.MessageService do
   end
 
   defp send_message(%{message: message}) do
-    result =
+    result1 =
       message
       |> SecretGrinch.Email.message_email
       |> SecretGrinch.Mailer.deliver_later
 
-    {:ok, result}
+    result2 =
+      message
+      |> SecretGrinch.Email.message_copy_email
+      |> SecretGrinch.Mailer.deliver_later
+
+    {:ok, {result1, result2}}
   end
 end
