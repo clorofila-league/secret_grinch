@@ -1,0 +1,5 @@
+<h2>New Match</h2>
+
+<%= render "form.html", Map.put(assigns, :action, match_path(@conn, :create)) %>
+
+<span><%= link "Back", to: match_path(@conn, :index) %></span>

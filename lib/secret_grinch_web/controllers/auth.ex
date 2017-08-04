@@ -3,6 +3,7 @@ defmodule SecretGrinchWeb.Auth do
   Handles user sessions
   """
   import Plug.Conn
+  import Phoenix.Controller
 
   def init(opts) do
     Keyword.fetch!(opts, :repo)
@@ -41,5 +42,18 @@ defmodule SecretGrinchWeb.Auth do
 
   defp checkpw(given_pass, password) do
     given_pass == password
+  end
+
+  alias SecretGrinchWeb.Router.Helpers
+
+  def authenticate_user(conn, _opts) do
+    if conn.assigns.current_user do
+      conn
+    else
+      conn
+      |> put_flash(:error, "You must be logged in to access that page")
+      |> redirect(to: Helpers.page_path(conn, :index))
+      |> halt()
+    end
   end
 end

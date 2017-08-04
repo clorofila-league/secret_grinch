@@ -1,10 +1,10 @@
-defmodule SecretGrinch.Match do
+defmodule SecretGrinch.Matches.Match do
   @moduledoc """
   Represents a match of the system
   """
   use Ecto.Schema
   import Ecto.Changeset
-  alias SecretGrinch.Match
+  alias SecretGrinch.Matches.Match
 
 
   schema "matches" do

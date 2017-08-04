@@ -11,7 +11,7 @@
 # and so on) as they will fail if something goes wrong.
 
 alias SecretGrinch.Repo
-alias SecretGrinch.Match
+alias SecretGrinch.Matches.Match
 alias SecretGrinch.User
 alias SecretGrinch.Assignment
 
