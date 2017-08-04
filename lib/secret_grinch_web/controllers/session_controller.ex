@@ -10,7 +10,7 @@ defmodule SecretGrinchWeb.SessionController do
     {:ok, conn} ->
       conn
       |> put_flash(:info, "Welcome back!")
-      |> redirect(to: page_path(conn, :index))
+      |> redirect(to: match_path(conn, :index))
     {:error, _reason, conn} ->
       conn
       |> put_flash(:error, "Invalid name/password combination")
