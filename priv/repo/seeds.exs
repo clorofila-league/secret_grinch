@@ -14,7 +14,9 @@ alias SecretGrinch.Repo
 alias SecretGrinch.Matches.Match
 alias SecretGrinch.User
 alias SecretGrinch.Assignment
+alias SecretGrinch.Message
 
+Repo.delete_all Message
 Repo.delete_all Assignment
 Repo.delete_all Match
 Repo.delete_all User

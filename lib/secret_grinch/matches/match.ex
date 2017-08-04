@@ -13,7 +13,8 @@ defmodule SecretGrinch.Matches.Match do
     field :start_date, :naive_datetime
     field :organizer_id, :id
 
-    many_to_many :users, SecretGrinch.User, join_through: "match_users"
+    many_to_many :users, SecretGrinch.User,
+      join_through: "match_users", on_delete: :delete_all, unique: true
 
     timestamps()
   end
