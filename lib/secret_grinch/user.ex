@@ -11,6 +11,8 @@ defmodule SecretGrinch.User do
     field :name, :string
     field :password, :string
 
+    many_to_many :matches, SecretGrinch.Match, join_through: "match_users"
+
     timestamps()
   end
 
