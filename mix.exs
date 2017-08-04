@@ -42,7 +42,8 @@ defmodule SecretGrinch.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:tapex, "~> 0.1.0", only: :test}
+      {:tapex, "~> 0.1.0", only: :test},
+      {:credo, "~> 0.8", only: [:dev, :test], runtime: false}
     ]
   end
 

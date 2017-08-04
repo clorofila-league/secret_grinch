@@ -1,4 +1,7 @@
 defmodule SecretGrinchWeb.Auth do
+  @moduledoc """
+  Handles user sessions
+  """
   import Plug.Conn
 
   def init(opts) do
