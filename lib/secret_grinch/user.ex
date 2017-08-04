@@ -4,7 +4,6 @@ defmodule SecretGrinch.User do
   """
   use Ecto.Schema
   import Ecto.Changeset
-  alias SecretGrinch.User
 
 
   schema "users" do
@@ -16,9 +15,17 @@ defmodule SecretGrinch.User do
   end
 
   @doc false
-  def changeset(%User{} = user, attrs) do
-    user
-    |> cast(attrs, [:name, :email, :password])
-    |> validate_required([:name, :email, :password])
+  def registration_changeset(model, params) do
+    model
+    |> changeset(params)
+    |> cast(params, ~w(password))
+    |> validate_length(:password, min: 6, max: 100)
+  end
+
+  @doc false
+  def changeset(model, params \\ :invalid) do
+    model
+    |> cast(params, ~w(name email))
+    |> validate_length(:name, min: 1, max: 20)
   end
 end
