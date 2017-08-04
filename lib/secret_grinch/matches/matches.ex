@@ -22,6 +22,19 @@ defmodule SecretGrinch.Matches do
   end
 
   @doc """
+  Returns the list of matches for a user.
+
+  ## Examples
+
+      iex> list_matches_for_user(user)
+      [%Match{}, ...]
+
+  """
+  def list_matches_for_user(user) do
+    Repo.preload(user, :matches).matches
+  end
+
+  @doc """
   Gets a single match.
 
   Raises `Ecto.NoResultsError` if the Match does not exist.
