@@ -8,8 +8,8 @@ defmodule SecretGrinch.Message do
     field :body, :string
     field :subject, :string
     field :match_id, :id
-    field :sender, :id
-    field :recepient, :id
+    field :sender_id, :id
+    field :recepient_id, :id
 
     timestamps()
   end

@@ -13,7 +13,7 @@ defmodule SecretGrinch.Repo.Migrations.CreateMessages do
     end
 
     create index(:messages, [:match_id])
-    create index(:messages, [:sender])
-    create index(:messages, [:recepient])
+    create index(:messages, [:sender_id])
+    create index(:messages, [:recepient_id])
   end
 end

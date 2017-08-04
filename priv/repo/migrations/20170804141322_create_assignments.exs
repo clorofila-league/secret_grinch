@@ -11,7 +11,7 @@ defmodule SecretGrinch.Repo.Migrations.CreateAssignments do
     end
 
     create index(:assignments, [:match_id])
-    create index(:assignments, [:sender])
-    create index(:assignments, [:recepient])
+    create index(:assignments, [:sender_id])
+    create index(:assignments, [:recepient_id])
   end
 end
