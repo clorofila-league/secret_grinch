@@ -15,7 +15,8 @@ defmodule SecretGrinchWeb.MatchController do
 
   def new(conn, _params) do
     changeset = Matches.change_match(%Match{})
-    render(conn, "new.html", [changeset: changeset, action: :create])
+    {{year, month, day}, {h, m, _}} = :calendar.universal_time
+    render(conn, "new.html", [changeset: changeset, action: :create, current_year: year, current_month: month, current_day: day, current_hours: h, current_minutes: m])
   end
 
   def create(conn, %{"match" => match_params}) do

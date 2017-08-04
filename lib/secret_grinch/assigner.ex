@@ -1,11 +1,12 @@
 defmodule SecretGrinch.Assigner do
+  @moduledoc false
   use GenServer
   alias SecretGrinch.Repo
   alias SecretGrinch.Matches.Match
   alias SecretGrinch.AssignerService
   import Ecto.Query
 
-  @frequency 20000
+  @frequency 20_000
 
   def start_link() do
     GenServer.start_link(__MODULE__, :ok, [name: __MODULE__])

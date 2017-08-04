@@ -13,13 +13,13 @@
 
   <div class="form-group">
     <%= label f, :start_date, class: "control-label" %>
-    <%= datetime_select f, :start_date, class: "form-control" %>
+    <%= datetime_select f, :start_date,  year: [selected: @current_year], month: [selected: @current_month], day: [selected: @current_day], hour: [selected: @current_hours], minute: [selected: @current_minutes] , class: "form-control" %>
     <%= error_tag f, :start_date %>
   </div>
 
   <div class="form-group">
     <%= label f, :end_date, class: "control-label" %>
-    <%= datetime_select f, :end_date, class: "form-control" %>
+    <%= datetime_select f, :end_date,  year: [selected: @current_year], month: [selected: @current_month + 1], day: [selected: @current_day], hour: [selected: @current_hours], minute: [selected: @current_minutes] , class: "form-control" %>
     <%= error_tag f, :end_date %>
   </div>
 

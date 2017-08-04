@@ -1,4 +1,5 @@
 defmodule SecretGrinch.AssignerService do
+  @moduledoc false
   alias SecretGrinch.Matches.Match
   alias SecretGrinch.Repo
   alias SecretGrinch.Assignment
