@@ -15,6 +15,8 @@ defmodule SecretGrinch.Matches.Match do
     many_to_many :users, SecretGrinch.User,
       join_through: "match_users", on_delete: :delete_all, unique: true
 
+    has_many :assignments, SecretGrinch.Assignment
+
     timestamps()
   end
 
