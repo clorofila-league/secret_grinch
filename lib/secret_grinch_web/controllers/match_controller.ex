@@ -4,6 +4,8 @@ defmodule SecretGrinchWeb.MatchController do
   alias SecretGrinch.Matches
   alias SecretGrinch.Matches.Match
 
+  plug :authenticate_user when action in [:index, :new, :show, :edit]
+
   def index(conn, _params) do
     matches = Matches.list_matches()
     render(conn, "index.html", matches: matches)

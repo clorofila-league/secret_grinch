@@ -23,6 +23,7 @@ defmodule SecretGrinchWeb do
       import Plug.Conn
       import SecretGrinchWeb.Router.Helpers
       import SecretGrinchWeb.Gettext
+      import SecretGrinchWeb.Auth, only: [authenticate_user: 2]
     end
   end
 
