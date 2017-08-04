@@ -1,4 +1,7 @@
 defmodule SecretGrinch.Message do
+  @moduledoc """
+  Represents a message of the system
+  """
   use Ecto.Schema
   import Ecto.Changeset
   alias SecretGrinch.Message
