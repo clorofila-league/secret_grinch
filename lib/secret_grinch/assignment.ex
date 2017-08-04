@@ -1,4 +1,7 @@
 defmodule SecretGrinch.Assignment do
+  @moduledoc """
+  Represents the relationship between a sender and a recipient for a match
+  """
   use Ecto.Schema
   import Ecto.Changeset
   alias SecretGrinch.Assignment

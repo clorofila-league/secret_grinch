@@ -21,7 +21,7 @@ defmodule SecretGrinch.Mixfile do
   def application do
     [
       mod: {SecretGrinch.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :bamboo]
     ]
   end
 
@@ -43,7 +43,9 @@ defmodule SecretGrinch.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:tapex, "~> 0.1.0", only: :test},
-      {:credo, "~> 0.8", only: [:dev, :test], runtime: false}
+      {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
+      {:bamboo, "~> 0.7"},
+      {:bamboo_smtp, "~> 1.2.1"}
     ]
   end
 
