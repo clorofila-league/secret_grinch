@@ -26,4 +26,11 @@
   <div class="form-group">
     <%= submit "Submit", class: "btn btn-primary" %>
   </div>
+
+  <div align="center" >
+    <strong>Current Time (UTC)</strong>
+  </div>
+  <div align="center">
+    <iframe src="http://free.timeanddate.com/clock/i5u3evl1/tt0/tw0/tm1/ts1/tb4" frameborder="0" width="87" height="34"></iframe>
+  </div>
 <% end %>
