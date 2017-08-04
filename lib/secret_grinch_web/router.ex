@@ -21,7 +21,10 @@ defmodule SecretGrinchWeb.Router do
     resources "/users", UserController, only: [:new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
 
-    resources "/matches", MatchController
+    resources "/matches", MatchController do
+      resources "/messages", MessageController, only: [:new, :create]
+    end
+
   end
 
   # Other scopes may use custom stacks.

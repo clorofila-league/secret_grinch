@@ -5,6 +5,8 @@ defmodule SecretGrinchWeb.Auth do
   import Plug.Conn
   import Phoenix.Controller
 
+  alias SecretGrinchWeb.Router.Helpers
+
   def init(opts) do
     Keyword.fetch!(opts, :repo)
   end
@@ -43,8 +45,6 @@ defmodule SecretGrinchWeb.Auth do
   defp checkpw(given_pass, password) do
     given_pass == password
   end
-
-  alias SecretGrinchWeb.Router.Helpers
 
   def authenticate_user(conn, _opts) do
     if conn.assigns.current_user do
