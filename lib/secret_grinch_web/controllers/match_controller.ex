@@ -3,6 +3,7 @@ defmodule SecretGrinchWeb.MatchController do
 
   alias SecretGrinch.Matches
   alias SecretGrinch.Matches.Match
+  alias SecretGrinch.Repo
 
   plug :authenticate_user when action in [:index, :new, :show, :edit]
 
@@ -19,8 +20,13 @@ defmodule SecretGrinchWeb.MatchController do
 
   def create(conn, %{"match" => match_params}) do
     match_params = Map.put(match_params, "organizer_id", conn.assigns.current_user.id)
+    result =
+      %Match{}
+      |> Match.changeset(match_params)
+      |> Ecto.Changeset.put_assoc(:users, [conn.assigns.current_user])
+      |> Repo.insert()
 
-    case Matches.create_match(match_params) do
+    case result do
       {:ok, match} ->
         conn
         |> put_flash(:info, "Match created successfully.")
