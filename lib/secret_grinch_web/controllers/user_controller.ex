@@ -14,7 +14,7 @@ defmodule SecretGrinchWeb.UserController do
     case Repo.insert(changeset) do
       {:ok, user} ->
         conn
-        |> put_flash(:info, "#{user.name} created!")
+        |> put_flash(:info, "#{user.name} created! Please, sign in")
         |> redirect(to: page_path(conn, :index))
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)

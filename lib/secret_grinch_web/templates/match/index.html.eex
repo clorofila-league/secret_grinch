@@ -14,7 +14,7 @@
       <td><%= match.name %></td>
 
       <td class="text-right">
-        <span><%= link "Send new message", to: match_path(@conn, :show, match), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Send new message", to: match_message_path(@conn, :new, match), class: "btn btn-default btn-xs" %></span>
 <!--         <span><%= link "Edit", to: match_path(@conn, :edit, match), class: "btn btn-default btn-xs" %></span> -->
 <!--         <span><%= link "Delete", to: match_path(@conn, :delete, match), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span> -->
       </td>
