@@ -7,7 +7,7 @@ defmodule SecretGrinchWeb.MatchController do
   plug :authenticate_user when action in [:index, :new, :show, :edit]
 
   def index(conn, _params) do
-    matches = Matches.list_matches()
+    matches = Matches.list_matches_for_user(conn.assigns.current_user)
     render(conn, "index.html", matches: matches)
   end
 
