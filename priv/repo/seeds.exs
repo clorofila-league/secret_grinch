@@ -19,8 +19,8 @@ Repo.delete_all User
 
 persisted_user = Repo.insert!(%User{
   email:    "hulk.clorofila@gmail.com",
-  password: "verde",
-  name:     "The Grinch"
+  password: "green",
+  name:     "Bruce Bane"
 })
 
 Repo.insert!(%Match{
