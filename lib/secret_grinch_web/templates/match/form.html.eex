@@ -18,9 +18,9 @@
   </div>
 
   <div class="form-group">
-    <%= label f, :start_date, class: "control-label" %>
+    <%= label f, :end_date, class: "control-label" %>
     <%= datetime_select f, :end_date, class: "form-control" %>
-    <%= error_tag f, :start_date %>
+    <%= error_tag f, :end_date %>
   </div>
 
   <div class="form-group">
