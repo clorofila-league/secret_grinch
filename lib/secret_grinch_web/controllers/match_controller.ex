@@ -8,7 +8,8 @@ defmodule SecretGrinchWeb.MatchController do
 
   def index(conn, _params) do
     matches = Matches.list_matches_for_user(conn.assigns.current_user)
-    render(conn, "index.html", matches: matches)
+    matches_to_subscribe = Matches.list_matches_for_user_to_subscribe(conn.assigns.current_user)
+    render(conn, "index.html", matches: matches, matches_to_subscribe: matches_to_subscribe)
   end
 
   def new(conn, _params) do

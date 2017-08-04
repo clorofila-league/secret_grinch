@@ -23,6 +23,7 @@ defmodule SecretGrinchWeb.Router do
 
     resources "/matches", MatchController do
       resources "/messages", MessageController, only: [:new, :create]
+      resources "/users", MatchUsersController, only: [:create]
     end
 
   end
