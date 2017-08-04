@@ -15,6 +15,7 @@ alias SecretGrinch.Match
 alias SecretGrinch.User
 alias SecretGrinch.Assignment
 
+Repo.delete_all Assignment
 Repo.delete_all Match
 Repo.delete_all User
 
@@ -40,7 +41,8 @@ not_started = Repo.insert!(%Match{
   name:         "Not Started Yet",
   start_date:   ~N[2017-08-05 00:00:00],
   end_date:     ~N[2017-09-05 00:00:00],
-  organizer_id: hulk.id
+  organizer_id: hulk.id,
+  users:        [hulk, yoda, goblin]
 })
 
 ongoing = Repo.insert!(%Match{
