@@ -13,10 +13,12 @@ defmodule SecretGrinchWeb.MatchController do
 
   def new(conn, _params) do
     changeset = Matches.change_match(%Match{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", [changeset: changeset, action: :create])
   end
 
   def create(conn, %{"match" => match_params}) do
+    match_params = Map.put(match_params, "organizer_id", conn.assigns.current_user.id)
+
     case Matches.create_match(match_params) do
       {:ok, match} ->
         conn

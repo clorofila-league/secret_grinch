@@ -6,7 +6,6 @@ defmodule SecretGrinch.Matches.Match do
   import Ecto.Changeset
   alias SecretGrinch.Matches.Match
 
-
   schema "matches" do
     field :end_date, :naive_datetime
     field :name, :string
@@ -22,8 +21,8 @@ defmodule SecretGrinch.Matches.Match do
   @doc false
   def changeset(%Match{} = match, attrs) do
     match
-    |> cast(attrs, [:name, :start_date, :end_date])
-    |> validate_required([:name, :start_date, :end_date])
+    |> cast(attrs, [:name, :start_date, :end_date, :organizer_id])
+    |> validate_required([:name, :start_date, :end_date, :organizer_id])
     |> unique_constraint(:name)
   end
 end
