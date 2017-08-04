@@ -5,8 +5,8 @@ defmodule SecretGrinchWeb.SessionController do
     render conn, "new.html"
   end
 
-  def create(conn, %{"session" => %{"name" => user, "password" => pass}}) do
-    case SecretGrinchWeb.Auth.login_by_name_and_pass(conn, user, pass, repo: SecretGrinch.Repo) do
+  def create(conn, %{"session" => %{"email" => email, "password" => pass}}) do
+    case SecretGrinchWeb.Auth.login_by_email_and_pass(conn, email, pass, repo: SecretGrinch.Repo) do
     {:ok, conn} ->
       conn
       |> put_flash(:info, "Welcome back!")

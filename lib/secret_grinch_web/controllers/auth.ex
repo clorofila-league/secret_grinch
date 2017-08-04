@@ -25,9 +25,9 @@ defmodule SecretGrinchWeb.Auth do
     configure_session(conn, drop: true)
   end
 
-  def login_by_name_and_pass(conn, name, given_pass, opts) do
+  def login_by_email_and_pass(conn, email, given_pass, opts) do
     repo = Keyword.fetch!(opts, :repo)
-    user = repo.get_by(SecretGrinch.User, name: name)
+    user = repo.get_by(SecretGrinch.User, email: email)
     cond do
       user && checkpw(given_pass, user.password) ->
         {:ok, login(conn, user)}
