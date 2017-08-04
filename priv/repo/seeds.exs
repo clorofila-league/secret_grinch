@@ -44,14 +44,15 @@ not_started = Repo.insert!(%Match{
   start_date:   ~N[2017-08-05 00:00:00],
   end_date:     ~N[2017-09-05 00:00:00],
   organizer_id: hulk.id,
-  users:        [hulk, yoda, goblin]
+  users:        [hulk]
 })
 
 ongoing = Repo.insert!(%Match{
   name:         "Ongoing",
   start_date:   ~N[2017-08-03 00:00:00],
   end_date:     ~N[2017-09-03 00:00:00],
-  organizer_id: hulk.id
+  organizer_id: hulk.id,
+  users:        [hulk, yoda, goblin]
 })
 
 finished = Repo.insert!(%Match{
