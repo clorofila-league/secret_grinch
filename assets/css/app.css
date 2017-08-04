@@ -1,1 +1,9 @@
 /* This file is for your main application css. */
+.logo {
+  width: 519px;
+  height: 71px;
+  display: inline-block;
+  margin-bottom: 1em;
+  background-image: none;
+  background-size: 519px 71px;
+}
